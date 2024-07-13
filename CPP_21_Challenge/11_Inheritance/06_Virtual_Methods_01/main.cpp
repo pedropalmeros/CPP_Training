@@ -4,6 +4,8 @@
  * In the previous line the pointer is Mammals type but it is pointing to a Dog object. 
  * 
  * VIRTUAL Methods are used almost as a template THEY HAVE TO BE OVERLOADED IN THE DERIVED CLASSES
+ * 
+ * RULE OF THUMB: IF ANY FUNCTION OF THE CLASS IS VIRTUAL, THE DESTRUCTOR IS VIRTUAL TOO
  *************************************************************************************************************************************************/
 #include <iostream>
 
