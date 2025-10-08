@@ -6,27 +6,21 @@ using namespace std;
 
 
 int main() {
-    LinkedList* list = new LinkedList(11);
+    LinkedList* list = new LinkedList(0);
     cout << "Linked list created with initial value: " << list->getHead()->value << endl;
     list->printList();
 
     cout << "Adding a second Node" << endl; 
-    list->append(3);
+    list->append(2);
 
     list->printList();
 
-    list->append(23);
-    list->append(7);
-    list->append(4);
-    cout << "Initial list " << endl;
+    cout << "Inserting a new node at index 1 with a value of 5" << endl; 
+    list->insert(1,5);
+
     list->printList();
 
-    cout << "Deleting a the last Node" << endl; 
-    list->delete_last();
-    list->printList();
-
-
-
+    
     return 0;
 
 }   

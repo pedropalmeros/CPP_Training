@@ -27,7 +27,7 @@ class LinkedList{
 
         void printList();
 
-        void appendOwn(int value);
+        void append_own(int value);
 
         void append(int value);
 
@@ -35,7 +35,23 @@ class LinkedList{
 
         void delete_last();
 
-        void prepend_own();
+        void prepend(int value);
+
+        void delete_first_own();
+
+        void delete_first();
+
+        Node* get(int index);
+
+        bool set(int index, int value);
+
+        bool insert(int index, int value); 
+
+        void deleteNode(int index); 
+
+        void reverse();
+
+
 };
 
 #endif // LINKEDLIST_H

@@ -38,6 +38,10 @@ void LinkedList::printTail(){
     cout <<"Tail: " << tail->value << endl;
 }
 
+void LinkedList::printLength(){
+    cout << "Length: " << length << endl;
+}
+
 
 void LinkedList::printList(){
     Node* temp = head;
@@ -47,7 +51,7 @@ void LinkedList::printList(){
     }
 }
 
-void LinkedList::appendOwn(int value){
+void LinkedList::append_own(int value){
     // Note this function works but is not correct since I have to loop through all the list
     // And I didn't use the advange of the tail.
     // create the new node
@@ -109,6 +113,18 @@ void LinkedList::delete_last_own(){
     }
     }  
 }
+void LinkedList::delete_first(){
+            if (length == 0) return;
+            Node* temp = head;
+            if (length == 1) {
+                head = nullptr;
+                tail = nullptr;
+            } else {
+                head = head->next;
+            }
+            delete temp;
+            length--;
+}
 
 void LinkedList::delete_last(){
     /* CASES TO BE ADDRESSED
@@ -140,3 +156,117 @@ void LinkedList::delete_last(){
         delete temp;
     }
 }
+
+void LinkedList::prepend(int value){
+    Node* newNode = new Node(value);
+
+    if (length==0){
+        head = newNode; 
+        tail = newNode;
+    }
+    else{
+        newNode->next = head;
+        head = newNode; 
+    }
+
+    length++;  
+}
+
+void LinkedList::delete_first_own(){
+    if (length==0){ 
+        return;
+    }else if(length==1){
+        head = nullptr; 
+        tail = nullptr; 
+    }else{
+        Node* node2Delete = head; 
+
+        head = head->next; 
+
+        delete node2Delete; 
+    }
+    length--;
+}
+
+Node* LinkedList::get(int index){
+    // the index has to be GE 0 and index has to be LE the length
+    
+    if (index < 0 || index>length){
+        return nullptr;
+    }
+    Node* temp = head; 
+    for(int i = 0; i < index; i++){
+        temp = temp->next;
+    }
+
+    return temp;
+}
+
+bool LinkedList::set(int index, int value){
+    if (index < 0 || index > length){
+        return false;
+    }
+    Node* temp = head; 
+    for(int i = 0; i < index; i++){
+        temp = temp->next;
+    }
+
+    temp->value = value; 
+    return true;
+}
+
+bool LinkedList::insert(int index, int value){
+    if (index < 0 || index > length){
+        return false;
+    }
+    
+    if (index == 0){
+        prepend(value);
+        return true;
+    }
+
+    if (index == length){
+        append(value); 
+        return true;
+    }
+    Node* newNode = new Node(value);
+    Node* temp = get(index-1);
+    newNode->next = temp->next;
+    temp->next = newNode;
+
+    length++;
+
+    return true; 
+
+}
+
+void LinkedList::deleteNode(int index){
+    if (index < 0 || index >= length) return;
+    if (index == 0) return delete_first();
+    if (index == length-1) return delete_last();
+
+    Node* prev = get(index-1); 
+    Node* temp = prev->next; 
+
+    prev->next = temp->next; 
+
+    delete temp; 
+    length--;
+
+}
+
+void LinkedList::reverse(){
+    Node* temp = head; 
+    head = tail; 
+    tail = temp; 
+    Node* after = temp->next; 
+    Node* before = nullptr; 
+    for(int i = 0; i < length; i++){
+        after = temp->next;
+        temp->next = before; 
+        before = temp;
+        temp = after;
+    }
+}
+
+
