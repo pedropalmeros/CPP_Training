@@ -2,7 +2,8 @@
 
 using namespace std;
 
-void change(int *x, int *y);
+void change(int *x, int *y); // this receives pointers      /// when calling  change(&x, &y); 
+//void change(int &x, int &y); // this receives references  /// when calling change(x,y); 
 
 int main(){
     int x = 5, y = 10;

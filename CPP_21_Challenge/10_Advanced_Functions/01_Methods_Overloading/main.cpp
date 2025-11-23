@@ -7,6 +7,9 @@ int main(){
     Rect01.DrawFigure();
     cout << "DrawFigure(40,2): " << endl; 
     Rect01.DrawFigure(40,2);
+
+    cout << "DrawingFigure with no parameters" << endl; 
+    Rect01.DrawFigure();
     
     return 0; 
 }

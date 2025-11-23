@@ -31,6 +31,7 @@ void Counter::setVal(int aVal){
 }
 
 int main(){
+    Counter myCounter;
     int elShort = 5; 
     Counter elCnt = elShort;
     cout << "elCnt: " << elCnt.getVal() << endl; 

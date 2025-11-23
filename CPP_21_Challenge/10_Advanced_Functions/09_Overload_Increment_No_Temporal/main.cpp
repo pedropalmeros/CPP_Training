@@ -31,7 +31,12 @@ const Counter & Counter::operator++(){
     return *this; 
 }
 
+// In this case the '&' means that it is returning a refence not a copy of the 
+// object. 
 
+// const -> ensures the returned reference cannot be used to modify the object. 
+
+// *this -> referes to the current object instance. 
 
 void Counter::increment(){
     lVal+=1;

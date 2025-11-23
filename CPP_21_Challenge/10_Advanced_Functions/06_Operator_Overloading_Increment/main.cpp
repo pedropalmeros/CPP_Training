@@ -27,7 +27,7 @@ void Counter::setVal(int aVal){
 }
 
 void Counter::increment(){
-    lVal += 1; 
+    ++lVal; 
 }
 
 

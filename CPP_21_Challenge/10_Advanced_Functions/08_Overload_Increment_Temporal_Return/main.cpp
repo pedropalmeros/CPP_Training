@@ -35,6 +35,9 @@ Counter Counter::operator++(){
     return Counter(lVal);
 }
 
+/*void Counter::operator++(){/
+    ++lVal;
+}*/
 
 int main(){
     Counter i;
@@ -43,5 +46,8 @@ int main(){
     cout << "'i' value: " << i.getVal() << endl;
     Counter a = ++i; 
     cout << "The value of 'a' is: " << a.getVal() << endl; 
+    cout << "The value of 'i' is: " << i.getVal() << endl; 
+    cout << "Incrementing again i"  << endl; 
+    ++i;
     cout << "The value of 'i' is: " << i.getVal() << endl; 
 }

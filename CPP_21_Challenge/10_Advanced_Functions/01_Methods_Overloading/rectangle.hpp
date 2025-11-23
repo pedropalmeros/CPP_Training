@@ -25,8 +25,8 @@ void Rectangle::DrawFigure() {
 }
 
 void Rectangle::DrawFigure(int aHeight, int aWidth){
-    for(int i = 0; i < aHeight; i++){
-        for(int j = 0; j < aWidth; j++){
+    for(int i = 0; i < aWidth; i++){
+        for(int j = 0; j < aHeight; j++){
             cout << "*" ;
         }
         cout << endl; 

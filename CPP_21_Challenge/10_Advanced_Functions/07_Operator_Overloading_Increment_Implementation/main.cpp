@@ -27,11 +27,11 @@ void Counter::setVal(int aVal){
 }
 
 void Counter::increment(){
-    lVal += 1; 
+    ++lVal; 
 }
 
 void Counter::operator++(){
-    lVal+=1;
+    ++lVal;
 }
 
 int main(){

@@ -1,45 +1,32 @@
-#include <iostream>
+#include <iostream> 
 
 using namespace std; 
 
-class Counter{
-    private:
-        int lVal;
+class Contador{
     public:
-        Counter();
-        Counter(int initialValue);
-        ~Counter();
-        int getVal() const; 
-        void setVal(int aVal); 
-        Counter Adding(const Counter &);
+        Contador(); 
+        Contador(int valorInicial);
+        ~Contador(){}
+        int ObtenerSuVal() const{ return suVal;}
+        void AsignarSuVal(int x) {suVal = x; }
+        Contador Sumar(const Contador &);
+    private: 
+        int suVal;
 };
 
-Counter::Counter(){}
+Contador::Contador(int valorInicial):suVal(valorInicial){}
 
-Counter::Counter(int initialValue):lVal(initialValue){}
+Contador::Contador():suVal(0){}
 
-Counter::~Counter(){}
-
-int Counter::getVal() const{
-    return lVal;
-}
-
-void Counter::setVal(int aVal){
-    lVal = aVal;
-}
-
-Counter Counter::Adding(const Counter & rhs){
-    return Counter(lVal+rhs.getVal());
+Contador Contador::Sumar(const Contador & rhs){
+    return Contador(this->suVal + rhs.ObtenerSuVal()); 
 }
 
 int main(){
-    Counter varOne(2), varTwo(4), varThree;
+    Contador varUno(2), varDos(4), varTres; 
 
-    varThree = varOne.Adding(varTwo);
-
-    cout << "vareOne: " << varOne.getVal() << endl; 
-    cout << "varTwo: " << varTwo.getVal() << endl; 
-    cout << "varThree: " << varThree.getVal() << endl; 
-    
-    return 0; 
+    varTres = varUno.Sumar(varDos); 
+    cout << "varUno: " << varUno.ObtenerSuVal() << endl; 
+    cout << "varDos: " << varDos.ObtenerSuVal() << endl; 
+    cout << "varTres: " << varTres.ObtenerSuVal() << endl; 
 }

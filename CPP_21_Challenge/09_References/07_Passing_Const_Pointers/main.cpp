@@ -14,7 +14,7 @@ class SimpleCat{
 };
 
 SimpleCat::SimpleCat(){
-    cout << "GENERIC CONSTRUCTOR of SIMPLECAT";
+    cout << "GENERIC CONSTRUCTOR of SIMPLECAT" << endl;
     this->lAge = 1; 
 }
 

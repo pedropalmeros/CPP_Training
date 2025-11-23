@@ -9,13 +9,16 @@ class SimpleCat{
         ~SimpleCat();
 }; 
 
+// constructor default
 SimpleCat::SimpleCat(){
     cout << "CONSTRUCTOR SimpleCat"<< endl; 
 }
 
+// constructor de copia, recibe puntero una dirección 
 SimpleCat::SimpleCat(SimpleCat &){
     cout << "COPY CONSTRUCTOR SimpleCat" << endl; 
 }
+
 
 SimpleCat::~SimpleCat(){
     cout << "DESTRUCTOR SimpleCat" << endl; 

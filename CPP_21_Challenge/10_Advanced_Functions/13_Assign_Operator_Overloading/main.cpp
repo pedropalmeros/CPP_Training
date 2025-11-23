@@ -46,6 +46,7 @@ Cat & Cat::operator=(const Cat & rhs){
 
     *lAge =  rhs.getAge();
     *lWeight = rhs.getWeight();
+    return *this;
 }
 
 int main(){
@@ -63,6 +64,8 @@ int main(){
     Bigotes=Pelusa;
 
     cout << "Bigotes' age: " << Bigotes.getAge() << endl; 
+
+    Bigotes = Bigotes;
 
     return 0; 
 }
