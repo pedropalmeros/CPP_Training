@@ -16,7 +16,7 @@ static void incrementInternal(){
 namespace{
     int anonCounter = 0; 
 
-    void inrementAnon(){
+    void incrementAnon(){
         anonCounter++;
         std::cout << "[internal anon] anonCounter = " << anonCounter << "\n"; 
     }
@@ -29,7 +29,7 @@ int externalCounter = 0;
 
 void incrementExternal(){
     externalCounter++; 
-    std::count << "[external] externalCounter = " << externalCounter << "\n";
+    std::cout << "[external] externalCounter = " << externalCounter << "\n";
 }
 
 // Wrapper function to show internal behavior from outside

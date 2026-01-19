@@ -11,6 +11,7 @@ int main(){
     std::cout << "[main] externalCounter = " << externalCounter << "\n\n"; 
 
     // Direct access to interl symbols
+    // NOTE: IF THE NEXT LINE IS UNCOMMENT THERE WILL BE AN ISSUE SINCE NEITHER THE FUNCIONS NOR THE VARIABLES ARE VISIBLE
     // incrementInternal(); 
     // incrementAnon(); 
     // std::cout << internalCounter; 
@@ -19,7 +20,7 @@ int main(){
     int internalCounter = 3; 
     std::cout << "[main] internalCounter = " << internalCounter << "\n\n"; 
 
-    incrementIntervalVariables(); 
+    incrementInternalVariables(); 
 
     return 0;
 }
