@@ -18,6 +18,7 @@ class Dog : public Mammal{
         // OTHER METHODS
         void moveTail(); 
         void askFood(); 
+        void getAllInfo();
     private: 
         RAZA lRaza; 
 };

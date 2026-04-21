@@ -9,6 +9,29 @@ int main(){
     Fido.talk();
     Fido.moveTail();
 
+
+    cout << "DESCRIBING FIDO: " << endl; 
+    Fido.getAllInfo();
+    cout << "-------------------------" << endl; 
+
+    cout << "DESCRIBING ROVER: " << endl; 
+    Rover.getAllInfo();
+    cout << "-------------------------" << endl; 
+
+
+    cout << "DESCRIBING BUSTER: " << endl; 
+    Buster.getAllInfo();
+    cout << "-------------------------" << endl;
+
+
+    cout << "DESCRIBING DOBBBIE: " << endl; 
+    Dobbie.getAllInfo();
+    cout << "-------------------------" << endl; 
+
+
+
+
+
     cout << "Fido is: " << Fido.getAge() << " years old." << endl; 
     return 0; 
 }

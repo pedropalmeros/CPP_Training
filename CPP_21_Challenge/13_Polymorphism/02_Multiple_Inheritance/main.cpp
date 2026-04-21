@@ -7,6 +7,8 @@ class Horse{
         Horse(){ cout << "Horse constructor" << endl; }
         virtual ~Horse() { cout << "Horse destructor" << endl; }
         virtual void Neight()const { cout << "Horse NEIGHTING" << endl; }
+    private: 
+        int age;
 };
 
 class Bird{

@@ -1,8 +1,8 @@
 #include "dog.hpp"
 
 Dog::Dog():lRaza(GOLDEN){
-    Mammal();
     cout << "DEFAULT DOG CONSTRUCTOR" << endl; 
+    Mammal();
 }
 
 Dog::Dog(int aAge):Mammal(aAge),lRaza(GOLDEN){
@@ -37,4 +37,10 @@ void Dog::moveTail(){
 
 void Dog::askFood(){
     cout << "DOG -> BARKIN FOR FOOOOOD" << endl;
+}
+
+void Dog::getAllInfo(){
+    cout << "RAZA: " << getRaza() << endl; 
+    cout << "PESO: " << getWeight() << endl; 
+    cout << "EDAD: " << getAge() << endl;
 }
