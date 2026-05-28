@@ -1,0 +1,2 @@
+Hello, world
+RAII makes resourse management easy.
