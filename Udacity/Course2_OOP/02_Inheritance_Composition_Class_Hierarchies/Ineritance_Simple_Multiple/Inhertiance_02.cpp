@@ -10,6 +10,13 @@ struct C : virtual public A { C() { cout << "C()\n"; }};
 struct D : public B, public C{
     // Most-dervied constructs the virtual base:
     D() : A(){cout <<"D()\n"; }
+
+    /**
+     * Note that in this constructor A() is explicitly invoked.
+     * In virtual inheritance the most-derived class is responsible
+     * of constructing the shared base.
+     */
+    
 };
 
 int main(){
