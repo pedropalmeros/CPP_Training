@@ -1,0 +1,48 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "9b26faed-e7e4-421e-be55-47bc3575f38d",
+   "metadata": {},
+   "source": [
+    "# Alternative Error Handling\n",
+    "\n",
+    "Exceptions are powerful. They let us handle rare unexpected situations cleanly. But the thing is, not every problem in the program deserves an exception. \n",
+    "\n",
+    "Imagine you're running a fast food restaurant. An exception is like pulling the fire alarm. Everything stops, the staff evacuates and alarms blare. That's perfect if the kitchen is actually on fire. But whatever customer just ask for extra  ketchup and you're out? Do you pull the fire alarm? No, of course not. You just tell tem, sorry, we're out and move on. In programming, it's the same.\n",
+    "\n",
+    "Exceptions are the fire alarm, but for small expected issues like value not found, then we need a lighter way to communicate failure, and that's where error codes and optionals come in. Exceptions are perfect for things that are rare and unexpected. A missing configuration file that should always exist, a network connection that fails halfway through, the system running out of memory. These are emergencies. They break normal program flow, so throwing makes sense. But sometimes the failure is just a normal outcome. Looking up a user name in a database that isn't there. Searching for a character in a string, and it's not found, checking a cache for data and it's empty. None of these are errors in the fire alarm sense, they're just no catch up moments. Things you expect to happen sometimes. If you throw exceptions for these normal situations, three problems appear. \n",
+    "1. Exceptions are slowet than simple checks. If you're throwing thousands of them in a loop, your program grinds down. Naturally, this is going to affect performance.\n",
+    "2. You en up writing `try` and `catch` everywhere, even for things that aren't truly exceptional. This just leads to your code looking bery cluttered.\n",
+    "3. Future developers or even your future self won't know if the code really failed, or if it just hit a normal no result condition. This obviously will lead to confusion and frustration.\n",
+    "\n",
+    "The simpler and better proposal for this cases is that the caller checks the `return` value. \n",
+    "\n",
+    "- Use exeptions for things that should almost never happen. TRUE EMERGENCIES\n",
+    "- Use lighter alternatives for normal outcomes, thinkes like return codes, enums or standard optional\n",
+    "- "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
